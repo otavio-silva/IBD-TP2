@@ -32,8 +32,8 @@ def add_pk_to_sqlite_table(tablename, index_column, connection):
 	create_and_drop_sql = template.format(tablename = tablename, cts = cts)
 	connection.executescript(create_and_drop_sql)
 
-if os.path.exists("database.db"):
-	os.remove("database.db")
+if os.path.exists("aeronautical_occurrences_database.db"):
+	os.remove("aeronautical_occurrences_database.db")
 engine = sqlalchemy.create_engine("sqlite:///aeronautical_occurrences_database.db", echo=False)
 
 anv = pd.read_csv('../data/anv.csv', sep='~')
